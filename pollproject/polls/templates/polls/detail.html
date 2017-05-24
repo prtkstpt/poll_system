@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<h1>Name of Candidate : {{ candidate.student }}</h1>
+<h2>Election Symbol :</h2>
+{% if candidate.symbol == 'Apple' %}
+<img src="{% static 'images/applelogo.png' %}">
+{% else %}
+<img src="{% static 'images/android.png' %}">
+{% endif %}
+<h3>Course : {{ candidate.student.course }}</h3>
+<h3>Roll Number : {{ candidate.student.roll_no }}</h3>
+<h3>Address : {{ candidate.student.address }}</h3>
