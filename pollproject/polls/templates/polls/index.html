@@ -1,9 +1,30 @@
-{% if candidate_list %}
-<ul>
-    {% for candidate in candidate_list %}
-    <li><a href="{{ candidate.id }}"/>{{candidate.student}} => {{ candidate.symbol }}</a></li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No Pools are available .</p>
-{% endif %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="row">
+    <div class="col-md-6">
+        {% if student_list %}
+        <h2>Student List</h2>
+        <ul>
+            {% for student in student_list %}
+            <h3><li>{{ student.id }} : {{ student.username }}</li><h3>
+                {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="col-md-6">
+        {% if candidate_list %}
+        <h2>Candidate List</h2>
+        <ul>
+            {% for candidate in candidate_list %}
+            <li><a href="{{ candidate.id }}"/>{{candidate.student}} => {{ candidate.symbol }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No Candidates. !</p>
+        {% endif %}
+    </div>
+</div>
+<center><a href="result"/><button type='button' class='btn btn-primary' name='result'>RESULT</button></a>

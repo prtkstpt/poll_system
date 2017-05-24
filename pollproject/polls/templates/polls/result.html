@@ -1,0 +1,11 @@
+<ul>
+    {% for key,value in final_votes.items %}
+    {% if 'winner' not in key %}
+    <li><h2>{{ key }} : {{ value }}</h2></li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+<h1>WINNER :
+    {{ final_votes.winner }}
+</h1>
